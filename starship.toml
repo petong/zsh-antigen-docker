@@ -1,0 +1,12 @@
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+
+[directory]
+truncation_length = 8
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = "🌱 "
+
+# Add more customizations as desired
