@@ -1,0 +1,66 @@
+add_newline = false
+
+format = """\
+	$directory\
+	$git_branch\
+	$git_status\
+	$aws\
+	$line_break\
+  $env_var\
+	$kubernetes\
+	$character\
+"""
+command_timeout = 700
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style) "
+truncate_to_repo = true
+truncation_length = 8
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+symbol = ""
+style = "purple"
+
+[character]
+#success_symbol = "[](bold green)"
+#error_symbol = "[](bold red)"
+vicmd_symbol = "[](bold green) "
+
+[aws]
+format = "[$region|$profile]($style) "
+style = "blue"
+[aws.region_aliases]
+us-east-1 = "use1"
+us-west-2 = "usw2"
+eu-west-2 = "euw2"
+
+[env_var]
+variable = "VENV"
+style = "purple"
+format = "󰰫 [$env_value]($style) "
+
+[kubernetes]
+symbol = "󰠳"
+style = "green"
+disabled = false
+format = "[$symbol $context $namespace]($style) "
+[kubernetes.context_aliases]
+"eks_dev1_admin" = "dev1"
+"eks_dev2_admin" = "dev2"
+"eks_eng-dev_developer" = "eng-dev"
+"eks_ripplenet-staging_admin" = "rn-staging"
+"ripplenet-prod-admin" = "rn-prod"
+"ripplenet-xcurrent-prod-admin" = "rnc-prod"
+"infra-platform-nexus-admin" = "nexus"
+"arn:aws:eks:us-west-2:418859002654:cluster/dev1" = "dev1"
+"arn:aws:eks:us-west-2:144652463978:cluster/dev2" = "dev2"
+"arn:aws:eks:us-west-2:147330078181:cluster/integration-prod" = "integration-prod"
+"arn:aws:eks:us-west-2:801172442310:cluster/nexus" = "nexus"
+"arn:aws:eks:us-west-2:638171108989:cluster/pipeline" = "pipeline"
+"arn:aws:eks:eu-west-2:067366607024:cluster/ripplenet-prod" = "ripplenet-prod"
+"arn:aws:eks:us-west-2:287591310218:cluster/ripplenet-staging" = "ripplenet-staging"
+"arn:aws:eks:eu-west-2:444391515250:cluster/rnc-prod" = "rnc-prod"
+"arn:aws:eks:us-west-2:144652463978:cluster/prisma-poc" = "prisma-poc"
+"arn:aws:eks:us-west-2:418859002654:cluster/dev1-blue" = "dev1-blue"
+"arn:aws:eks:us-west-2:418859002654:cluster/dev1-green" = "dev1-green"
